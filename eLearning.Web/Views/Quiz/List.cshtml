@@ -1,0 +1,13 @@
+﻿@model IEnumerable<edurate.Web.Infrastructure.Quiz>
+
+@{
+    
+}
+
+@foreach (var item in Model)
+{ 
+    <li>@Ajax.ActionLink(item.Name, "Details", "Quiz", new {id = item.Id}, new AjaxOptions(){
+                                                                    InsertionMode = InsertionMode.Replace,
+                                                                    UpdateTargetId = "chapter-content"
+                                                                })</li>
+}

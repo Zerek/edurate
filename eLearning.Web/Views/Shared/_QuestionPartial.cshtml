@@ -1,0 +1,39 @@
+﻿@model edurate.Web.Infrastructure.Question
+
+@{
+    ViewBag.Title = "_QuestionPartial";
+}
+
+<div id="question-@Model.Id" class="well">
+    <strong>@Model.Content</strong>
+    @if(Model.QuestionType == edurate.Web.Infrastructure.QuestionType.MultipleChoice)
+    {
+        foreach (var answer in Model.Answers)
+        { 
+            if (answer.IsRight)
+            { 
+                <label class="radio">
+                    @Html.RadioButton("answer-"+answer.QuestionId, answer.Id, true)
+                    @answer.Content
+                </label>
+                
+            }
+            else
+            {
+                <label class="radio">
+                    @Html.RadioButton("answer", answer.Id, false)
+                    @answer.Content
+                </label>
+            }
+        }
+    }
+    else if (Model.QuestionType == edurate.Web.Infrastructure.QuestionType.ShortAnswer)
+    { 
+        <p>
+        @foreach (var answer in Model.Answers)
+        { 
+            @answer.Content @:|
+        }
+        </p>
+    }
+</div>  

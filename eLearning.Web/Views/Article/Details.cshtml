@@ -1,0 +1,18 @@
+﻿@model edurate.Web.Infrastructure.Article
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+@using (Html.BeginForm("Uprate", "Article", new { articleId = Model.Id, userId = Model.UserId, categoryId = Model.CategoryId }, FormMethod.Post, new { id = "uprateForm" }))
+{
+    <a href="javascript:document.getElementById('uprateForm').submit()"><i class="icon-thumbs-up"></i></a>
+}
+@using (Html.BeginForm("Downrate", "Article", new { articleId = Model.Id, userId = Model.UserId, categoryId = Model.CategoryId }, FormMethod.Post, new { id = "downrateForm" }))
+{
+    <a href="javascript:document.getElementById('downrateForm').submit()"><i class="icon-thumbs-down"></i></a>
+}
+<article>
+    @Html.Raw(HttpUtility.HtmlDecode(Model.Content))
+</article>

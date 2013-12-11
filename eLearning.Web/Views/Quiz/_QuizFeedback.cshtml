@@ -1,0 +1,60 @@
+﻿@using edurate.Web.Resources
+@model edurate.Web.Infrastructure.QuizAttempt
+
+
+<div class="hero-unit">
+    <h2>Mark: @Model.Mark</h2>
+    <label><strong>Quiz name:</strong> @Model.Quiz.Name</label>
+    <label><strong>Started date:</strong> @Model.StartedTime</label>
+    <label><strong>Finished date:</strong> @Model.FinishedTime</label>
+</div>
+@foreach (var item in Model.QuizAttemptAnswers)
+{ 
+    <div>
+        <strong>
+            @item.Question.Content
+        </strong>
+        @if (item.Question.QuestionType == edurate.Web.Infrastructure.QuestionType.MultipleChoice)
+        {
+            foreach (var answer in item.Question.Answers)
+            {
+                if (answer.Id == item.QuestionAnswerId)
+                { 
+                    <label class="radio">
+                        @Html.RadioButton("answer-"+answer.QuestionId, answer.Id, true)
+                        @answer.Content
+                    </label>
+                
+                }
+                else
+                {
+                    <label class="radio">
+                        @Html.RadioButton("answer", answer.Id, false)
+                        @answer.Content
+                    </label>
+                }
+            }
+        
+            
+        }
+        else if (item.Question.QuestionType == edurate.Web.Infrastructure.QuestionType.ShortAnswer)
+        { 
+            <p>
+            @item.QuestionAnswerText
+            </p>
+        }
+        @if (item.IsCorrect)
+        { 
+            <div class="alert alert-success">
+                @UIResource.Correct @item.Question.Feedback
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-error">
+                @UIResource.Incorrect @item.Question.Feedback
+            </div>        
+        }
+    </div>    
+}
+

@@ -1,0 +1,73 @@
+﻿@model edurate.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="row-fluid">
+    <div class="span9"></div>
+    <div class="span3 well">
+    
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<fieldset>
+
+<!-- Form Name -->
+<legend>Sign in</legend>
+    
+<!-- Prepended text-->
+<div class="control-group">
+  <label class="control-label">Email</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-user"></i></span>
+      @Html.EditorFor(model=>model.Email)
+    </div>
+    @Html.ValidationMessageFor(m => m.Email, "", new { style="color:#b94a48;"})
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="control-group">
+  <label class="control-label">Password</label>
+  <div class="controls">
+    <div class="input-prepend">
+        <span class="add-on"><i class="icon-lock"></i></span>
+        @Html.PasswordFor(model=>model.Password)
+    </div>
+    @Html.ValidationMessageFor(m => m.Password, "", new { style="color:#b94a48;"})
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="control-group">
+  <div class="controls">
+    <label class="checkbox">
+      <input type="checkbox" name="RememberMe" value="Remember me?">
+      Remember me?
+    </label>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <div class="controls">
+    <button id="" name="" class="btn btn-primary">Login</button>
+  </div>
+</div>
+</fieldset>
+    <p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p>
+}
+                
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

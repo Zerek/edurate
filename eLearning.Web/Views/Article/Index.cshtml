@@ -1,0 +1,21 @@
+﻿@model IEnumerable<edurate.Web.Infrastructure.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (var item in Model) {
+    var content = HttpUtility.HtmlDecode(item.Content).Substring(0, 1000);
+    
+        
+    <h2>@Html.ActionLink(item.Title, "Details", new { id=item.Id })</h2>
+    <p class="well well-small">
+        <i class="icon-user"></i>@Html.DisplayFor(modelItem => item.User.Email) |
+        <i class="icon-time"></i>@Html.DisplayFor(modelItem => item.LastModifiedDate) |
+        <i class="icon-tag"></i>@Html.DisplayFor(modelItem => item.Category.Name)
+    </p>
+    @Html.Raw(content)
+    <hr />
+            
+}
+

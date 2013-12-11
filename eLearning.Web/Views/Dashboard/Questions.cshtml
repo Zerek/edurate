@@ -1,0 +1,38 @@
+﻿@using edurate.Web.Extensions;
+@model IEnumerable<edurate.Web.Infrastructure.Question>
+
+@{
+    ViewBag.Title = "Questions";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+    var questionType = edurate.Web.Infrastructure.QuestionType.MultipleChoice;
+}
+
+
+<div class="row-fluid">
+    <div class="span2">
+        @Html.Action("CourseMenu")
+    </div>
+    <div class="span9">
+        <h2>Quiz <small>questions</small></h2>
+        @using (Ajax.BeginForm("Create", "Question", new { id = ViewBag.QuizId },
+                                                    new AjaxOptions() { 
+                                                        HttpMethod = "GET",
+                                                        UpdateTargetId = "new-question",
+                                                        InsertionMode = InsertionMode.Replace
+                                                    }))
+
+        {
+            @Html.EnumDropDownListFor(model => questionType)
+            <input type="submit" value="Add"/>
+        }
+        <div id="new-question"></div>        
+        @foreach (var item in Model) {
+            @Html.Partial("_QuestionPartial", item)    
+        }
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

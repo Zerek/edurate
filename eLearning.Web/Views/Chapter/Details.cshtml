@@ -1,0 +1,17 @@
+﻿@model edurate.Web.Infrastructure.Chapter
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<article>
+    <header>
+        <h1>@Model.Title</h1>
+    </header>
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Content))
+
+    <p>
+        @Html.DisplayFor(model=>Model.LastModifiedDate)
+    </p>
+</article>
+

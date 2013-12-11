@@ -1,0 +1,56 @@
+﻿@using edurate.Web.Resources;
+@model IEnumerable<edurate.Web.Infrastructure.Chapter>
+
+@{
+    ViewBag.Title = "Chapters";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="row-fluid">
+    <div class="span2">
+        @Html.Action("CourseMenu")
+    </div>
+    <div class="span9">
+        <h2>@UIResource.Chapters</h2>
+        <p>
+            <a href="@Url.Action("Create", "Chapter", new { id = ViewBag.CourseId })" class="btn"><i class="icon-plus"></i> @UIResource.Add</a>
+        </p>
+    <table class="table table-hover">
+        <tr>
+            <th>@UIResource.Title</th>
+            <th>@UIResource.Order</th>
+            <th>@UIResource.CreatedDate</th>
+            <th>@UIResource.LastModifiedDate</th>
+            <th>@UIResource.Status</th>
+            <th>@UIResource.Actions</th>
+        </tr>
+        @foreach (var item in Model)
+        { 
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Order</td>
+                <td>@item.CreatedDate</td>
+                <td>@item.LastModifiedDate</td>
+                <td>
+                    @if(item.Published)
+                    {
+                        using (Html.BeginForm("Unpublish", "Chapter", new {id = item.Id}, FormMethod.Post, new { id = "chapter-"+item.Id })) {
+                            <a href="javascript:document.getElementById('chapter-' + @item.Id).submit()" class="btn mini blue-stripe"><i class="icon-ban-circle"></i> @UIResource.Unpublish</a>
+                        }
+                    } 
+                    else
+                    {
+                        using (Html.BeginForm("Publish", "Chapter", new { id = item.Id }, FormMethod.Post, new { id = "chapter-" + item.Id }))
+                        {
+                            <a href="javascript:document.getElementById('chapter-' + @item.Id).submit()" class="btn mini blue-stripe"><i class="icon-ok"></i> @UIResource.Publish</a>
+                        }
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Chapter", new { id = item.Id})" class="btn mini green-stripe"><i class="icon-pencil"></i> @UIResource.Edit</a>
+                    <a href="@Url.Action("Delete", "Chapter", new { id = item.Id})" class="btn mini red-stripe"><i class="icon-trash"></i> @UIResource.Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+    </div>
+</div>

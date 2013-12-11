@@ -1,0 +1,1642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FACACC2-60CE-466F-812E-B6678F55B204}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>edurate.Web</RootNamespace>
+    <AssemblyName>edurate.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>C:\Users\Igibek\AppData\Roaming\Telerik\Updates\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebSecConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ChapterController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Extensions\ExtendedFileExtensions.cs" />
+    <Compile Include="Extensions\FileSizeAttribute.cs" />
+    <Compile Include="Extensions\Helpers.cs" />
+    <Compile Include="Extensions\ImageSizeAttribute.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Article.cs" />
+    <Compile Include="Infrastructure\ArticleRating.cs" />
+    <Compile Include="Infrastructure\Category.cs" />
+    <Compile Include="Infrastructure\Chapter.cs" />
+    <Compile Include="Infrastructure\Course.cs" />
+    <Compile Include="Infrastructure\CourseRating.cs" />
+    <Compile Include="Infrastructure\EdurateDb.cs" />
+    <Compile Include="Infrastructure\IAcademyDataSource.cs" />
+    <Compile Include="Infrastructure\Language.cs" />
+    <Compile Include="Infrastructure\LocalizedCategory.cs" />
+    <Compile Include="Infrastructure\Question.cs" />
+    <Compile Include="Infrastructure\QuestionAnswer.cs" />
+    <Compile Include="Infrastructure\Quiz.cs" />
+    <Compile Include="Infrastructure\QuizAttemptAnswer.cs" />
+    <Compile Include="Infrastructure\QuizAttempt.cs" />
+    <Compile Include="Infrastructure\UsersInCategory.cs" />
+    <Compile Include="Infrastructure\UsersInCourse.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ArticleViewModel.cs" />
+    <Compile Include="Models\ChapterViewModel.cs" />
+    <Compile Include="Models\CourseViewModel.cs" />
+    <Compile Include="Models\DataManagement.cs" />
+    <Compile Include="Models\ProfileViewModel.cs" />
+    <Compile Include="Models\RatingViewModel.cs" />
+    <Compile Include="Models\UserRatingRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\UIResource.kk-KZ.Designer.cs">
+      <DependentUpon>UIResource.kk-KZ.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\UIResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UIResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\Default\profile-avatar.png" />
+    <Content Include="Content\themes\admin\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="Content\themes\admin\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="Content\themes\admin\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="Content\themes\admin\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="Content\themes\admin\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\themes\admin\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Content\themes\admin\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\themes\admin\bootstrap-daterangepicker\date.js" />
+    <Content Include="Content\themes\admin\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\themes\admin\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\themes\admin\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Content\themes\admin\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\themes\admin\bootstrap-toggle-buttons\static\js\jquery.toggle.buttons.js" />
+    <Content Include="Content\themes\admin\bootstrap-toggle-buttons\static\stylesheets\bootstrap-toggle-buttons.css" />
+    <Content Include="Content\themes\admin\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\themes\admin\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Content\themes\admin\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Content\themes\admin\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Content\themes\admin\bootstrap-wysiwyg-master\bootstrap-wysiwyg.js" />
+    <Content Include="Content\themes\admin\bootstrap\css\bootstrap-fileupload.css" />
+    <Content Include="Content\themes\admin\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\admin\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\admin\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\admin\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\admin\bootstrap\js\bootstrap-fileupload.js" />
+    <Content Include="Content\themes\admin\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\admin\breakpoints\breakpoints.js" />
+    <Content Include="Content\themes\admin\chosen-bootstrap\chosen\chosen-sprite.png" />
+    <Content Include="Content\themes\admin\chosen-bootstrap\chosen\chosen.css" />
+    <Content Include="Content\themes\admin\chosen-bootstrap\chosen\chosen.jquery.min.js" />
+    <Content Include="Content\themes\admin\ckeditor\ckeditor.js" />
+    <Content Include="Content\themes\admin\ckeditor\config.js" />
+    <Content Include="Content\themes\admin\ckeditor\plugins\icons.png" />
+    <Content Include="Content\themes\admin\ckeditor\styles.js" />
+    <Content Include="Content\themes\admin\clockface\css\clockface.css" />
+    <Content Include="Content\themes\admin\clockface\js\clockface.js" />
+    <Content Include="Content\themes\admin\css\metro.css" />
+    <Content Include="Content\themes\admin\css\style.css" />
+    <Content Include="Content\themes\admin\css\style_default.css" />
+    <Content Include="Content\themes\admin\css\style_responsive.css" />
+    <Content Include="Content\themes\admin\data-tables\DT_bootstrap.css" />
+    <Content Include="Content\themes\admin\data-tables\DT_bootstrap.js" />
+    <Content Include="Content\themes\admin\data-tables\images\sort_asc.png" />
+    <Content Include="Content\themes\admin\data-tables\images\sort_both.png" />
+    <Content Include="Content\themes\admin\data-tables\images\sort_desc.png" />
+    <Content Include="Content\themes\admin\data-tables\jquery.dataTables.js" />
+    <Content Include="Content\themes\admin\fancybox\source\blank.gif" />
+    <Content Include="Content\themes\admin\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Content\themes\admin\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Content\themes\admin\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Content\themes\admin\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Content\themes\admin\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Content\themes\admin\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\themes\admin\flot\jquery.flot.js" />
+    <Content Include="Content\themes\admin\flot\jquery.flot.pie.js" />
+    <Content Include="Content\themes\admin\flot\jquery.flot.resize.js" />
+    <Content Include="Content\themes\admin\flot\jquery.flot.stack.js" />
+    <Content Include="Content\themes\admin\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\themes\admin\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Content\themes\admin\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\themes\admin\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\themes\admin\gritter\images\gritter-light.png" />
+    <Content Include="Content\themes\admin\gritter\images\gritter.png" />
+    <Content Include="Content\themes\admin\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\themes\admin\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\themes\admin\img\avatar.png" />
+    <Content Include="Content\themes\admin\img\avatar1.jpg" />
+    <Content Include="Content\themes\admin\img\avatar1_small.jpg" />
+    <Content Include="Content\themes\admin\img\avatar2.jpg" />
+    <Content Include="Content\themes\admin\img\avatar3.jpg" />
+    <Content Include="Content\themes\admin\img\gallery\image1.jpg" />
+    <Content Include="Content\themes\admin\img\gallery\image1.png" />
+    <Content Include="Content\themes\admin\img\gallery\image10.png" />
+    <Content Include="Content\themes\admin\img\gallery\image11.png" />
+    <Content Include="Content\themes\admin\img\gallery\image12.png" />
+    <Content Include="Content\themes\admin\img\gallery\image13.png" />
+    <Content Include="Content\themes\admin\img\gallery\image14.png" />
+    <Content Include="Content\themes\admin\img\gallery\image15.png" />
+    <Content Include="Content\themes\admin\img\gallery\image2.jpg" />
+    <Content Include="Content\themes\admin\img\gallery\image2.png" />
+    <Content Include="Content\themes\admin\img\gallery\image3.jpg" />
+    <Content Include="Content\themes\admin\img\gallery\image3.png" />
+    <Content Include="Content\themes\admin\img\gallery\image4.jpg" />
+    <Content Include="Content\themes\admin\img\gallery\image4.png" />
+    <Content Include="Content\themes\admin\img\gallery\image5.png" />
+    <Content Include="Content\themes\admin\img\gallery\image6.png" />
+    <Content Include="Content\themes\admin\img\gallery\image7.png" />
+    <Content Include="Content\themes\admin\img\gallery\image8.png" />
+    <Content Include="Content\themes\admin\img\gallery\image9.png" />
+    <Content Include="Content\themes\admin\img\loading.gif" />
+    <Content Include="Content\themes\admin\img\logo-big.png" />
+    <Content Include="Content\themes\admin\img\logo.png" />
+    <Content Include="Content\themes\admin\img\menu-toggler.png" />
+    <Content Include="Content\themes\admin\img\overlay-icon.png" />
+    <Content Include="Content\themes\admin\img\portlet-collapse-icon-white.png" />
+    <Content Include="Content\themes\admin\img\portlet-collapse-icon.png" />
+    <Content Include="Content\themes\admin\img\portlet-config-icon-white.png" />
+    <Content Include="Content\themes\admin\img\portlet-config-icon.png" />
+    <Content Include="Content\themes\admin\img\portlet-expand-icon-white.png" />
+    <Content Include="Content\themes\admin\img\portlet-expand-icon.png" />
+    <Content Include="Content\themes\admin\img\portlet-reload-icon-white.png" />
+    <Content Include="Content\themes\admin\img\portlet-reload-icon.png" />
+    <Content Include="Content\themes\admin\img\portlet-remove-icon-white.png" />
+    <Content Include="Content\themes\admin\img\portlet-remove-icon.png" />
+    <Content Include="Content\themes\admin\img\remove-icon-small.png" />
+    <Content Include="Content\themes\admin\img\search-icon.png" />
+    <Content Include="Content\themes\admin\img\sidebar-menu-arrow.png" />
+    <Content Include="Content\themes\admin\img\syncfusion-icons-white.png" />
+    <Content Include="Content\themes\admin\img\syncfusion-icons.png" />
+    <Content Include="Content\themes\admin\jquery-slimscroll\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\themes\admin\jquery-slimscroll\jquery-ui-1.9.2.custom.min_16faaa22.js" />
+    <Content Include="Content\themes\admin\jquery-slimscroll\jquery-ui-1.9.2.custom.min_a2e8e22c.js" />
+    <Content Include="Content\themes\admin\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\themes\admin\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="Content\themes\admin\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\jquery.vmap.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\jqvmap.css" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="Content\themes\admin\jqvmap\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="Content\themes\admin\js\app.js" />
+    <Content Include="Content\themes\admin\js\demo.gmaps.js" />
+    <Content Include="Content\themes\admin\js\excanvas.js" />
+    <Content Include="Content\themes\admin\js\gmaps.js" />
+    <Content Include="Content\themes\admin\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\themes\admin\js\jquery-1.8.3.min_5f5b9a1d.js" />
+    <Content Include="Content\themes\admin\js\jquery.blockui.js" />
+    <Content Include="Content\themes\admin\js\jquery.cookie.js" />
+    <Content Include="Content\themes\admin\js\jquery.pulsate.min.js" />
+    <Content Include="Content\themes\admin\js\respond.js" />
+    <Content Include="Content\themes\admin\uniform\css\uniform.default.css" />
+    <Content Include="Content\themes\admin\uniform\images\bg-input-focus.png" />
+    <Content Include="Content\themes\admin\uniform\images\bg-input.png" />
+    <Content Include="Content\themes\admin\uniform\images\sprite.png" />
+    <Content Include="Content\themes\admin\uniform\jquery.uniform.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\changelog.html" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.af.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.am.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ar.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.arn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.as.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.az.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ba.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.be.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bo.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.br.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.bs.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ca.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.co.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.cs.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.cy.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.da.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.de.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.dv.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.el.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.en.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.es.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.et.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.eu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fa.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fi.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fil.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fo.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fr.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.fy.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ga.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gd.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.gu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ha.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.he.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hi.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hr.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.hy.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.id.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ig.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ii.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.is.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.it.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.iu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ja.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ka.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kk.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.km.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ko.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.kok.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ky.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lb.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lo.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lt.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.lv.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mi.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mk.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ml.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.moh.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mr.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ms.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.mt.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nb.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ne.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.no.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.nso.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.oc.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.or.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pa.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.prs.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ps.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.pt.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.qut.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.quz.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.rm.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ro.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ru.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.rw.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sa.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sah.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.se.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.si.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sk.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sma.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.smj.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.smn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sms.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sq.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sr.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sv.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.sw.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.syr.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ta.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.te.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tg.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.th.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tk.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tr.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tt.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ug.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uk.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.ur.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.uz.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.vi.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.wo.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.xh.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.yo.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zh.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\jquery.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.all.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.aspnetmvc.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.autocomplete.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.binder.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.calendar.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.columnmenu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.combobox.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.core.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.data.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.data.odata.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.data.xml.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.chart.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.core.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.gauge.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.stock.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.svg.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.themes.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dataviz.vml.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.datepicker.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.datetimepicker.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.draganddrop.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.dropdownlist.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.editable.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.editor.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.filtermenu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.fx.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.grid.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.groupable.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.history.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.imagebrowser.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.list.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.listview.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.menu.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.application.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.button.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.listview.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.loader.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.modalview.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.navbar.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.pane.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.popover.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.scroller.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.scrollview.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.shim.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.splitview.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.switch.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.mobile.view.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.numerictextbox.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.pager.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.panelbar.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.popup.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.reorderable.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.resizable.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.selectable.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.slider.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.sortable.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.splitter.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.tabstrip.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.timepicker.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.touch.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.treeview.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.upload.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.userevents.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.validator.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.web.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\js\kendo.window.min.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\license-agreements\EULA.txt" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\license-agreements\third-party\licenses.txt" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Black\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\BlueOpal\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Bootstrap\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Default\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\HighContrast\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\images\back.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.black.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.blueopal.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.bootstrap.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.common.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.black.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.blueopal.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.default.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.metro.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.metroblack.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.moonlight.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.silver.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.dataviz.uniform.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.default.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.highcontrast.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.metro.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.metroblack.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.mobile.all.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.mobile.android4.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.mobile.ios.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.mobile.meego.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.moonlight.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.rtl.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.silver.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\kendo.uniform.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\MetroBlack\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Moonlight\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Silver\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\brushed-metal.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots1.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots10.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots11.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots12.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots13.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots2.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots3.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots4.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots5.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots6.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots7.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots8.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\dots9.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\glass-lighter.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\glass.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\highlight.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\leather1.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\leather2.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\noise.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\stripe1.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\stripe2.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\stripe3.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\stripe4.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\stripe5.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\textures\stripe6.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\loading-image.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Uniform\sprite.png" />
+    <None Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\vsdoc\kendo.all-vsdoc.js" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\bg-BG\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\da-DK\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\de-DE\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\es-ES\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\fr-FR\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\Kendo.Mvc.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\Kendo.Mvc.xml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\nl-NL\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\pl-PL\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\pt-BR\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\pt-PT\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\ru-RU\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\uk-UA\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\Binaries\Mvc3\zh-CN\Kendo.Mvc.resources.dll" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\Currency.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\Date.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\DateTime.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\GridForeignKey.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\Integer.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\Number.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\ascx\Time.ascx" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Black\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Default\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Forest\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Hay\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Metro\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Metro\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Metro\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Metro\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Metro\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Metro\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2007\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Black\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\gradient.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Blue\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\gradient.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Office2010Silver\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Outlook\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Simple\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sitefinity\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Sunset\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.black.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.black.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.common.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.common.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.default.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.default.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.forest.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.forest.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.hay.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.hay.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.metro.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.metro.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2007.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2007.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2010black.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2010black.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2010blue.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2010blue.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2010silver.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.office2010silver.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.outlook.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.outlook.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.rtl.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.rtl.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.simple.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.simple.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.sitefinity.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.sitefinity.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.sunset.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.sunset.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.telerik.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.telerik.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.transparent.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.transparent.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.vista.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.vista.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.web20.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.web20.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.webblue.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.webblue.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.windows7.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\telerik.windows7.min.css" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Telerik\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\active.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\gradient.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\group.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\hover.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\selected.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\toolbar.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Transparent\widget.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Vista\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Web20\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\sprite.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\treeview-line.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\treeview-nodes-rtl.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\WebBlue\treeview-nodes.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\editor.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\imagebrowser.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\loading.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\slider-h.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\slider-v.gif" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\sprite-vertical.png" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\LegacyThemes\Windows7\sprite.png" />
+    <Content Include="Content\themes\scaffold\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Content\themes\scaffold\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Content\themes\scaffold\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Content\themes\scaffold\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Content\themes\scaffold\ico\favicon.ico" />
+    <Content Include="Content\themes\scaffold\img\avatar.png" />
+    <Content Include="Content\themes\scaffold\img\clients\cl-1.png" />
+    <Content Include="Content\themes\scaffold\img\dummies\80x80\img1.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\80x80\img2.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\80x80\img3.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\big.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\big1.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\blog1.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\blog2.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\img1.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\img2.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\img3.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\testimonial-author-1.png" />
+    <Content Include="Content\themes\scaffold\img\dummies\testimonial-author-2.png" />
+    <Content Include="Content\themes\scaffold\img\dummies\work1.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work2.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work3.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work4.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work5.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work6.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work7.jpg" />
+    <Content Include="Content\themes\scaffold\img\dummies\work8.jpg" />
+    <Content Include="Content\themes\scaffold\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\scaffold\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\scaffold\img\icons\add.png" />
+    <Content Include="Content\themes\scaffold\img\icons\arrow-left.png" />
+    <Content Include="Content\themes\scaffold\img\icons\arrow-right.png" />
+    <Content Include="Content\themes\scaffold\img\icons\box-1-white.png" />
+    <Content Include="Content\themes\scaffold\img\icons\box-2-white.png" />
+    <Content Include="Content\themes\scaffold\img\icons\box-3-white.png" />
+    <Content Include="Content\themes\scaffold\img\icons\design-icon.png" />
+    <Content Include="Content\themes\scaffold\img\icons\link_post_icon.png" />
+    <Content Include="Content\themes\scaffold\img\icons\quote.png" />
+    <Content Include="Content\themes\scaffold\img\icons\responsive-icon.png" />
+    <Content Include="Content\themes\scaffold\img\icons\social\dribble.png" />
+    <Content Include="Content\themes\scaffold\img\icons\social\fb.png" />
+    <Content Include="Content\themes\scaffold\img\icons\social\flickr.png" />
+    <Content Include="Content\themes\scaffold\img\icons\social\google.png" />
+    <Content Include="Content\themes\scaffold\img\icons\social\twitter.png" />
+    <Content Include="Content\themes\scaffold\img\icons\statistic-icon.png" />
+    <Content Include="Content\themes\scaffold\img\icons\syncfusion-icons-white.png" />
+    <Content Include="Content\themes\scaffold\img\icons\syncfusion-icons.png" />
+    <Content Include="Content\themes\scaffold\img\icons\wp-icon.png" />
+    <Content Include="Content\themes\scaffold\img\icons\zoom_icon.png" />
+    <Content Include="Content\themes\scaffold\img\image_hover.png" />
+    <Content Include="Content\themes\scaffold\img\list\arrow.png" />
+    <Content Include="Content\themes\scaffold\img\list\check-dark.png" />
+    <Content Include="Content\themes\scaffold\img\list\check-white.png" />
+    <Content Include="Content\themes\scaffold\img\list\check.png" />
+    <Content Include="Content\themes\scaffold\img\list\circle.png" />
+    <Content Include="Content\themes\scaffold\img\list\diamond.png" />
+    <Content Include="Content\themes\scaffold\img\logo.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\themes\scaffold\img\slides\camera\blank.gif" />
+    <Content Include="Content\themes\scaffold\img\slides\camera\camera-loader.gif" />
+    <Content Include="Content\themes\scaffold\img\slides\camera\camera_skins.png" />
+    <Content Include="Content\themes\scaffold\img\slides\flexslider\img1.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\flexslider\img2.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\flexslider\img3.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\flexslider\img4.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\arrows.png" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\dark-trans.png" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\img1.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\img2.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\img3.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\img4.jpg" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\loading.gif" />
+    <Content Include="Content\themes\scaffold\img\small-avatar.png" />
+    <Content Include="Content\themes\scaffold\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\scaffold\css\bootstrap.css" />
+    <Content Include="Content\themes\scaffold\css\boxtile.css" />
+    <Content Include="Content\themes\scaffold\css\camera.css" />
+    <Content Include="Content\themes\scaffold\css\docs.css" />
+    <Content Include="Content\themes\scaffold\css\flexslider.css" />
+    <Content Include="Content\themes\scaffold\css\nivo-slider.css" />
+    <Content Include="Content\themes\scaffold\css\overwrite.css" />
+    <Content Include="Content\themes\scaffold\css\prettyPhoto.css" />
+    <Content Include="Content\themes\scaffold\css\style.css" />
+    <Content Include="Content\themes\scaffold\css\color.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\scaffold\js\application.js" />
+    <Content Include="Content\themes\scaffold\js\bootstrap.js" />
+    <Content Include="Content\themes\scaffold\js\camera\camera.min.js" />
+    <Content Include="Content\themes\scaffold\js\camera\setting.js" />
+    <Content Include="Content\themes\scaffold\js\custom.js" />
+    <Content Include="Content\themes\scaffold\js\google-code-prettify\prettify.css" />
+    <Content Include="Content\themes\scaffold\js\google-code-prettify\prettify.js" />
+    <Content Include="Content\themes\scaffold\js\hover\jquery-hover-effect.js" />
+    <Content Include="Content\themes\scaffold\js\hover\setting.js" />
+    <Content Include="Content\themes\scaffold\js\jquery-1.8.2.min.js" />
+    <Content Include="Content\themes\scaffold\js\jquery-1.8.2.min_5e985c10.js" />
+    <Content Include="Content\themes\scaffold\js\jquery.easing.1.3.js" />
+    <Content Include="Content\themes\scaffold\js\jquery.elastislide.js" />
+    <Content Include="Content\themes\scaffold\js\jquery.flexslider.js" />
+    <Content Include="Content\themes\scaffold\js\jquery.prettyPhoto.js" />
+    <Content Include="Content\themes\scaffold\js\jquery.tweet.js" />
+    <Content Include="Content\themes\scaffold\js\modernizr.js" />
+    <Content Include="Content\themes\scaffold\js\nivo\jquery.nivo.slider.js" />
+    <Content Include="Content\themes\scaffold\js\nivo\setting.js" />
+    <Content Include="Content\themes\scaffold\js\portfolio\jquery.quicksand.js" />
+    <Content Include="Content\themes\scaffold\js\portfolio\setting.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\themes\scaffold\img\clients\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\dummies\80x80\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\dummies\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\icons\social\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\icons\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_rounded\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\dark_square\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\prettyPhoto\default\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\slides\camera\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\slides\flexslider\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\img\slides\nivo\Thumbs.db" />
+    <Content Include="Content\themes\scaffold\ico\Thumbs.db" />
+    <Content Include="Content\themes\admin\bootstrap-colorpicker\img\Thumbs.db" />
+    <Content Include="Content\themes\admin\data-tables\images\Thumbs.db" />
+    <Content Include="Content\themes\admin\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\themes\admin\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\themes\admin\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\themes\admin\font-awesome\font\fontawesome-webfont_162a16fe.eot" />
+    <Content Include="Content\themes\admin\gritter\images\Thumbs.db" />
+    <Content Include="Content\themes\admin\img\gallery\Thumbs.db" />
+    <Content Include="Content\themes\admin\img\Thumbs.db" />
+    <Content Include="Content\themes\admin\uniform\images\Thumbs.db" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\license-agreements\EULA.pdf" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\license-agreements\EULA.rtf" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\images\KendoUI.ttf" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\images\KendoUI.woff" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\styles\Metro\Thumbs.db" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\Currency.cshtml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\Date.cshtml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\DateTime.cshtml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\GridForeignKey.cshtml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\Integer.cshtml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\Number.cshtml" />
+    <Content Include="Content\themes\kendoui.trial.2012.3.1315.hotfix\wrappers\aspnetmvc\EditorTemplates\razor\Time.cshtml" />
+    <None Include="Properties\PublishProfiles\edurate - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\edurate - Web Deploy %282%29.pubxml" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.8.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kendo.modernizr.custom.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\jquery.min.js" />
+    <None Include="Scripts\kendo\2012.3.1315\kendo.all-vsdoc.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.all.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.binder.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.calendar.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.combobox.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.core.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.data.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.data.odata.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.data.xml.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.svg.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dataviz.vml.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.datepicker.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.editable.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.editor.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.fx.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.grid.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.groupable.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.history.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.list.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.listview.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.menu.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.loader.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.pager.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.panelbar.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.popup.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.reorderable.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.resizable.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.selectable.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.slider.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.sortable.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.splitter.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.timepicker.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.touch.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.treeview.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.upload.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.userevents.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.validator.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.web.min.js" />
+    <Content Include="Scripts\kendo\2012.3.1315\kendo.window.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\scaffold\application.js" />
+    <Content Include="Scripts\scaffold\bootstrap.js" />
+    <Content Include="Scripts\scaffold\camera\camera.min.js" />
+    <Content Include="Scripts\scaffold\camera\setting.js" />
+    <Content Include="Scripts\scaffold\custom.js" />
+    <Content Include="Scripts\scaffold\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\scaffold\google-code-prettify\prettify.js" />
+    <Content Include="Scripts\scaffold\hover\jquery-hover-effect.js" />
+    <Content Include="Scripts\scaffold\hover\setting.js" />
+    <Content Include="Scripts\scaffold\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\scaffold\jquery-1.8.2.min_5e985c10.js" />
+    <Content Include="Scripts\scaffold\jquery.easing.1.3.js" />
+    <Content Include="Scripts\scaffold\jquery.elastislide.js" />
+    <Content Include="Scripts\scaffold\jquery.flexslider.js" />
+    <Content Include="Scripts\scaffold\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\scaffold\jquery.tweet.js" />
+    <Content Include="Scripts\scaffold\modernizr.js" />
+    <Content Include="Scripts\scaffold\nivo\jquery.nivo.slider.js" />
+    <Content Include="Scripts\scaffold\nivo\setting.js" />
+    <Content Include="Scripts\scaffold\portfolio\jquery.quicksand.js" />
+    <Content Include="Scripts\scaffold\portfolio\setting.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Shared\_LayoutDashboard.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Courses.cshtml" />
+    <Content Include="Views\Chapter\List.cshtml" />
+    <Content Include="Views\Chapter\Details.cshtml" />
+    <Content Include="Views\Chapter\Create.cshtml" />
+    <Content Include="Views\Chapter\Edit.cshtml" />
+    <Content Include="Views\Chapter\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Chapters.cshtml" />
+    <Content Include="Views\Course\_RatingPartial.cshtml" />
+    <Content Include="Views\Course\Class.cshtml" />
+    <Content Include="Views\Quiz\List.cshtml" />
+    <Content Include="Views\Quiz\Details.cshtml" />
+    <Content Include="Views\Quiz\Create.cshtml" />
+    <Content Include="Views\Quiz\Edit.cshtml" />
+    <Content Include="Views\Quiz\Delete.cshtml" />
+    <Content Include="Views\Shared\_AuthorPartial.Summary.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Dashboard\Articles.cshtml" />
+    <Content Include="Views\Shared\_AuthorPartial.Details.cshtml" />
+    <Content Include="Views\Dashboard\CourseMenu.cshtml" />
+    <Content Include="Views\Dashboard\Quizes.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\Details.cshtml" />
+    <Content Include="Views\Question\Create.cshtml" />
+    <Content Include="Views\Question\Edit.cshtml" />
+    <Content Include="Views\Question\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Questions.cshtml" />
+    <Content Include="Views\Question\AddAnswer.cshtml" />
+    <Content Include="Views\Shared\_QuestionPartial.cshtml" />
+    <Content Include="Views\Quiz\StartQuiz.cshtml" />
+    <Content Include="Views\Quiz\_QuizFeedback.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Article\Details.cshtml" />
+    <Content Include="Views\Article\Create.cshtml" />
+    <Content Include="Views\Article\Edit.cshtml" />
+    <Content Include="Views\Article\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\UIResource.kk-KZ.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.kk-KZ.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UIResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UIResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52969</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55844/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseCdnSupport="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

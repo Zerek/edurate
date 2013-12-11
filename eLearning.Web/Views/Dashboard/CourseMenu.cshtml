@@ -1,0 +1,13 @@
+﻿@using edurate.Web.Resources;
+@model IEnumerable<edurate.Web.Models.CourseListViewModel>
+
+
+<ul class="nav nav-list">
+    @foreach (var item in Model)
+    {
+        <li class="nav-header">@item.Name</li>
+        <li>@Html.ActionLink(UIResource.Chapters, "Chapters", "Dashboard", new{id = item.Id}, null)</li>
+        <li>@Html.ActionLink(UIResource.Quizzes, "Quizes", "Dashboard", new{id = item.Id}, null)</li>
+        
+    }
+</ul>

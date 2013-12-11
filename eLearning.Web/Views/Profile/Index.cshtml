@@ -1,0 +1,27 @@
+﻿@using edurate.Web.Extensions
+@model edurate.Web.Models.User
+
+@{
+    ViewBag.Title = User.Identity.Name;
+    var totalRating = Model.UsersInCategory.Sum(e=>e.Rating);
+}
+
+<div class="row-fluid">
+    @Html.Partial("_AuthorPartial.Details", Model)
+    <div class="span9">
+        <h5>Total</h5>
+        <div class="progress progress-info progress-striped">
+            <div class="bar" style="width: 100%"><strong>@totalRating</strong></div>
+            
+        </div>
+        @foreach (var item in Model.UsersInCategory)
+        {
+            
+            <label>@item.Category.Name</label>
+            <div class="progress progress-info progress-striped">
+                <div class="bar" style="width: @((int)(100 * ((float)item.Rating)/totalRating))%"><strong>@item.Rating / @totalRating</strong></div>
+            </div>
+            
+        }
+    </div>
+</div>

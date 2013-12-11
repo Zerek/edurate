@@ -1,0 +1,51 @@
+﻿@using edurate.Web.Resources;
+@using edurate.Web.Extensions;
+@model edurate.Web.Infrastructure.Course
+
+@{
+    ViewBag.Title = Model.Name + " Details";
+}
+
+    <div class="span4">
+        <aside>
+            <h4 class="heading-primary"><span class="btn btn-large btn-primary"><i class="m-icon-big-swapdown m-icon-white"></i></span>&nbsp;&nbsp;Author detail</h4>
+            @Html.Partial("_AuthorPartial.Summary", Model.Instructor)
+            <h4 class="heading-primary"><span class="btn btn-large btn-primary"><i class="m-icon-big-swapdown m-icon-white"></i></span>&nbsp;&nbsp;Course detail</h4>
+            <ul class="project-detal">
+                <li><label>@UIResource.Category: </label>@Model.Category.Name</li>
+                <li><label>@UIResource.Rating: </label>
+                    @Html.Partial("_RatingPartial", new edurate.Web.Models.RatingViewModel() { 
+                            CourseId = Model.Id, 
+                            CurrentRating = ViewBag.Rating, 
+                            CategoryId = Model.CategoryId,
+                            InstructorId = Model.InstructorId
+                        })
+                </li>
+                <li><label>@UIResource.Status: </label>
+                    @if (!ViewBag.HasEnrolled || !Request.IsAuthenticated)
+                    {
+                        @Html.ActionLink(UIResource.Enroll, "Enroll", "Course", new { id = Model.Id }, new { @class="btn btn-primary"})
+                    }
+                    else 
+                    { 
+                        @Html.ActionLink(UIResource.GoToClass, "Class", "Course", new{id = Model.Id}, new { @class="btn btn-primary"})
+                    }
+                </li>
+                <li><label>@UIResource.CreatedDate: </label>@Model.CreatedDate</li>
+                <li><label>@UIResource.LastModifiedDate: </label>@Model.LastModifiedDate</li>
+            </ul>
+    
+    
+        </aside>
+    </div>
+    <div class="span8">
+        <article>
+            <h1>@Model.Name</h1>
+            @Html.Image(Model.Name, Url.Content("~/Content/Images/" + Model.Instructor.Email + "/Courses/" + Model.ImageName), null)
+            @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Description))
+        </article>
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

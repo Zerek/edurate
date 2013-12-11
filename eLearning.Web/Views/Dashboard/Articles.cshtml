@@ -1,0 +1,47 @@
+﻿@using edurate.Web.Resources
+@model IEnumerable<edurate.Web.Models.ArticleListViewModel>
+@{
+    ViewBag.Title = "Articles";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>My Articles</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Article", null)" class="btn"><i class="icon-plus"></i> @UIResource.Add</a>
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>@UIResource.Name</th>
+        <th>@UIResource.Category</th>
+        <th>@UIResource.Rating</th>
+        <th>@UIResource.CreatedDate</th>
+        <th>@UIResource.LastModifiedDate</th>
+        <th>@UIResource.Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Article", new { id = item.Id})" class="btn mini green-stripe"><i class="icon-pencil"></i> @UIResource.Edit</a>
+            <a href="@Url.Action("Delete", "Article", new { id = item.Id})" class="btn mini red-stripe"><i class="icon-trash"></i> @UIResource.Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

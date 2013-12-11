@@ -1,0 +1,20 @@
+﻿@model edurate.Web.Models.RatingViewModel
+
+<div class="row-fluid pull-right">
+    <div class="span4">
+@using (Html.BeginForm("Uprate", "Course", new { courseId = Model.CourseId, instructorId = Model.InstructorId, categoryId = Model.CategoryId }, FormMethod.Post, new { id = "uprateForm"}))
+{
+    <a href="javascript:document.getElementById('uprateForm').submit()"><i class="icon-thumbs-up"></i></a>
+}
+        </div>
+    <div class="span4">
+<div id="course-rating">@Model.CurrentRating</div>
+    </div>
+ <div class="span4">
+
+@using (Html.BeginForm("Downrate", "Course", new { courseId = Model.CourseId, instructorId = Model.InstructorId, categoryId = Model.CategoryId }, FormMethod.Post, new { id = "downrateForm" }))
+{
+    <a href="javascript:document.getElementById('downrateForm').submit()"><i class="icon-thumbs-down"></i></a>
+}
+     </div>
+</div>

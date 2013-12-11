@@ -1,0 +1,51 @@
+﻿@using edurate.Web.Resources;
+@using edurate.Web.Extensions;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Edurate</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/themes/scaffold")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/scaffold")
+        
+</head>
+    <body>
+        <div class="navbar">
+            @Html.Partial("_LoginPartial")
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            @Html.MenuItem("Home", "Index", "Home", new { @class = "primary" })
+                            @Html.MenuItem(UIResource.Courses, "Index", "Course", new { @class = "success" })
+                            @Html.MenuItem(UIResource.Articles, "Index", "Article", new { @class = "warning" })
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row-fluid">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <p>&copy; @DateTime.Now.Year - EDURATE</p>
+            </div>
+        </div>
+
+        
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

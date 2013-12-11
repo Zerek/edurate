@@ -1,0 +1,17 @@
+﻿@model IEnumerable<edurate.Web.Models.ChapterViewModel>
+
+@{
+    
+}
+
+
+@foreach (var item in Model)
+{ 
+    <li>@Ajax.ActionLink(item.Title, "Details", "Chapter", new {id = item.Id}, new AjaxOptions(){
+                                                                    InsertionMode = InsertionMode.Replace,
+                                                                    UpdateTargetId = "chapter-content"
+                                                                })</li>
+}
+    
+
+

@@ -1,0 +1,37 @@
+﻿@using edurate.Web.Resources;
+@model edurate.Web.Infrastructure.Course
+
+@{
+    ViewBag.Title = Model.Name + " " + "class";
+}
+
+<div class="row-fluid">
+    <div class="span12">
+    <h1>@Model.Name</h1>
+    <div class="row-fluid">
+    <div class="span3">
+        <h5>@UIResource.Chapters</h5>
+        <ul class="nav nav-tabs nav-stacked">
+            @Html.Action("List", "Chapter", new { id = Model.Id })
+            
+        </ul>
+        <h5>@UIResource.Quizzes</h5>
+        <ul class="nav nav-tabs nav-stacked">
+            @Html.Action("List", "Quiz", new { id = Model.Id })
+        </ul>
+    </div>
+    <div class="span9">
+        <div id="chapter-content">
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

@@ -1,0 +1,31 @@
+﻿@using edurate.Web.Resources;
+@using edurate.Web.Extensions;
+@model IEnumerable<edurate.Web.Models.CourseListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    var count = 1;
+}
+
+<h2>All Courses</h2>
+
+<div id="course-list">
+    <ul class="thumbnails">
+    @foreach (var item in Model) {
+            <li class="span3" @if(count%5 == 0) {<text>style="margin-left:0;"</text>}>
+                <div class="thumbnail">
+                    @Html.Image(item.Name, Url.Content("~/Content/Images/" + item.UserName + "/Courses/" + item.Image), null)
+                    <h4>@item.Name</h4>
+                    <p>
+                    @Html.DisplayFor(modelItem => item.CategoryName) |         
+                    @Html.DisplayFor(modelItem => item.UserName) | 
+                    @Html.DisplayFor(modelItem => item.Rating)</p>
+                    @Html.ActionLink(UIResource.Details, "Details", "Course", new { id = item.Id }, new { @class="btn btn-primary"})
+                </div>
+            </li>
+        count++;
+    }
+    </ul>
+</div>
+
+

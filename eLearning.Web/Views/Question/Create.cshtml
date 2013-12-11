@@ -1,0 +1,61 @@
+﻿@using edurate.Web.Extensions;
+@model edurate.Web.Infrastructure.Question
+
+@{
+    ViewBag.Title = "Create";
+    var str = (object)ViewBag.QuestionType;
+}
+
+<script>
+    var i = 1;
+    function UpdateLink () {
+        $("#add-answer-button").attr("href", "/Question/AddAnswer?questionType=" + '@str.ToString()' +"&index=" + i);
+        i++;
+        
+    }
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>Question</legend>
+        @Html.Hidden("question.QuizId", (object) ViewBag.QuizId)
+        @Html.Hidden("question.QuestionType", (object) ViewBag.QuestionType)
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.TextArea("question.Content")
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Feedback)
+        </div>
+        <div class="editor-field">
+            @Html.Editor("question.Feedback")
+            @Html.ValidationMessageFor(model => model.Feedback)
+        </div>
+        @Ajax.ActionLink("Add Answers", "AddAnswer", "Question",
+                                new {  questionType = ViewBag.QuestionType, index = "0"},
+                                new AjaxOptions()
+                                    {
+                                        HttpMethod = "GET",
+                                        InsertionMode = InsertionMode.InsertAfter,
+                                        UpdateTargetId = "answers",
+                                        OnSuccess = "UpdateLink"
+                                    },
+                                    new { id = "add-answer-button"})
+        <div id="answers"></div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+@section Scripts {
+
+}
+

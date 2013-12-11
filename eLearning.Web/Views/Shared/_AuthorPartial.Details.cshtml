@@ -1,0 +1,21 @@
+﻿@using edurate.Web.Resources;
+@using edurate.Web.Extensions;
+@model edurate.Web.Models.User
+
+<div class="span3">
+    <div class="thumbnail">
+        @if (Model.ImageName.IsEmpty())
+        { 
+            @Html.Image("default", Url.Content("~/Content/Images/Default/profile-avatar.png"), null)
+        }
+        else
+        {
+            @Html.Image(Model.FullName, Url.Content("~/Content/Images/" + Model.Email + "/Profile/" + Model.ImageName), new { @class="img-circle"})
+        }
+        <h3>@Model.FullName</h3>
+        <label>@UIResource.Email: <strong>@Model.Email</strong></label>
+        <label>Age: <strong>@Model.DateOfBirth</strong></label>
+        <label>@UIResource.AboutMe: <strong>@Model.Description</strong></label>
+    </div>
+</div>
+

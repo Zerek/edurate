@@ -1,0 +1,35 @@
+﻿@using edurate.Web.Resources;
+@model edurate.Web.Infrastructure.Quiz
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="hero-unit">
+    <h2>@Model.Name</h2>
+    <p>@Model.Description</p>
+    <label><strong>Attempts:</strong> @Model.Attempts</label>
+    <label><strong>Total questions:</strong> @Model.QuestionAmount</label>
+    <label><strong>@UIResource.CreatedDate:</strong> @Model.CreatedDate</label>
+    <label><strong>@UIResource.LastModifiedDate:</strong> @Model.LastModifiedDate</label>
+    <div class="control-group">
+@if(ViewBag.QuizAttemptNumber < Model.Attempts)
+{
+    @Ajax.ActionLink(UIResource.Start, "StartQuiz", "Quiz", new { id = Model.Id}, new AjaxOptions(){ InsertionMode = InsertionMode.Replace, UpdateTargetId = "chapter-content"}, new { @class = "btn btn-success" })
+}
+@if (ViewBag.QuizAttemptNumber > 0)
+{
+    using (Ajax.BeginForm("FeedbackQuiz", "Quiz", new { id = Model.Id }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "chapter-content" }, new { @class="form-inline"}))
+    {
+        var arr = new int[ViewBag.QuizAttemptNumber];
+        for (int i = ViewBag.QuizAttemptNumber; i > 0; i--)
+        {
+            arr[i - 1] = i;
+        }
+        @Html.DropDownList("attempt", new SelectList(arr), new { @class = "span1" }) 
+        <input type="submit" value="@UIResource.Feedback" class="btn btn-primary" />
+    }
+    
+}
+    </div>
+</div>

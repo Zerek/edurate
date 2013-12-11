@@ -1,0 +1,28 @@
+﻿@using edurate.Web.Infrastructure
+@model edurate.Web.Infrastructure.QuestionAnswer
+
+@{
+    ViewBag.Title = "AddAnswer";
+    QuestionType type = (QuestionType)ViewBag.QuestionType;
+}
+    <label>Answer:</label>
+    <div class="editor-field">
+        @Html.Editor("question.Answers[" + (string)ViewBag.Index + "].Content")
+    </div>
+@if(type == QuestionType.MultipleChoice){
+    <div class="editor-field">
+        @Html.Editor("question.Answers[" + (string)ViewBag.Index + "].Feedback")
+    </div>
+    <label>Is Right</label>
+    <div class="editor-field">
+        @Html.CheckBox("question.Answers[" + (string)ViewBag.Index + "].IsRight")
+    </div>
+}
+else if (type == QuestionType.ShortAnswer)
+{ 
+    @Html.Hidden("question.Answers[" + (string)ViewBag.Index + "].IsRight", true)
+    @Html.Editor("question.Answers[" + (string)ViewBag.Index + "].Feedback")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

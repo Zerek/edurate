@@ -1,0 +1,64 @@
+﻿@model edurate.Web.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="row-fluid">
+    <div class="span9"></div>
+    <div class="span3 well">
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<fieldset class="">
+
+<!-- Form Name -->
+<legend>Register</legend>
+
+<!-- Prepended text-->
+<div class="control-group">
+  <label class="control-label">Email</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-user"></i></span>
+      @Html.EditorFor(model => model.Email)
+    </div>
+    @Html.ValidationMessageFor(model => model.Email, "", new { style="color:#b94a48;"})
+  </div>
+</div>
+<!-- Prepended text-->
+<div class="control-group">
+  <label class="control-label">Password</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-lock"></i></span>
+      @Html.PasswordFor(model => model.Password)
+    </div>
+    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { style="color:#b94a48;"})
+  </div>
+</div>
+<!-- Prepended text-->
+<div class="control-group">
+  <label class="control-label">Confirm Password</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-lock"></i></span>
+      @Html.PasswordFor(model => model.ConfirmPassword)
+    </div>
+    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { style="color:#b94a48;"})
+  </div>
+</div>
+<!-- Button -->
+<div class="control-group">
+  <div class="controls">
+    <button id="" name="" class="btn btn-primary">Register</button>
+  </div>
+</div>
+
+</fieldset>
+}
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

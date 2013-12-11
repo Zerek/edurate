@@ -1,0 +1,23 @@
+﻿@using edurate.Web.Extensions;
+@model edurate.Web.Models.User
+
+<div class="row-fluid">
+    <div class="span3">
+        @if(!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            @Html.Image(Model.FullName, Url.Content(Model.ImageUrl), null)
+        } else
+        {
+            @Html.Image("default", Url.Content("~/Content/Images/Default/profile-avatar.png"), null)
+        }
+    </div>
+    <div class="span9">
+        <p>
+            @Model.FullName
+        </p>
+        <p>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.Description))
+        </p>
+    </div>
+</div>
+

@@ -1,0 +1,78 @@
+﻿@using edurate.Web.Extensions;
+@model edurate.Web.Models.ProfileViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<link href="~/Content/themes/admin/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
+<link href="~/Content/themes/admin/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Edit", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    string imageUrl = ViewBag.ImageUrl;
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Profile</legend>
+        @if (!imageUrl.IsEmpty())
+        { 
+            @Html.Image(Model.FullName, Url.Content(imageUrl), null)
+        }
+        else
+        {
+            @Html.Image("default", Url.Content("~/Content/Images/Default/profile-avatar.png"), null)
+        }
+        @Html.HiddenFor(model => model.UserId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.File)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="File" id="File" />
+            @Html.ValidationMessageFor(model => model.File)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullName)
+            @Html.ValidationMessageFor(model => model.FullName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfBirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfBirth)
+            @Html.ValidationMessageFor(model => model.DateOfBirth)
+        </div>
+
+        
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $(document).ready(function() {
+                // create DatePicker from input HTML element
+                $("#DateOfBirth").kendoDatePicker({
+                    format : "MM/dd/yyyy"
+                });
+
+            });
+        </script>
+}

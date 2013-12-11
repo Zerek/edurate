@@ -1,0 +1,91 @@
+﻿@using edurate.Web.Extensions
+@using edurate.Web.Resources
+@model edurate.Web.Models.EditedCourseViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Course", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Course</legend>
+
+        @Html.HiddenFor(model => model.Id)
+        @if(ViewBag.ImageUrl != null)
+        {
+            @Html.Image(Model.Name, Url.Content((string)ViewBag.ImageUrl), null)
+        }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.File)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="File" id="File" />
+            @Html.ValidationMessageFor(model => model.File)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            <textarea class="text-box multi-line" id="Description" name="Description">
+                @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Description))
+            </textarea>
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+
+        <p>
+            @Html.ActionLink(UIResource.Cancel, "Courses", "Dashboard", null, new { @class="btn blue" } )
+            <input type="submit" value="@UIResource.Save" class="btn red"/>
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function() {
+            // create Editor from textarea HTML element with default set of tools
+            $("#Description").kendoEditor({
+                tools: [
+                    "formatBlock",
+                    "bold",
+                    "italic",
+                    "underline",
+                    "strikethrough",
+                    "justifyLeft",
+                    "justifyCenter",
+                    "justifyRight",
+                    "justifyFull",
+                    "insertUnorderedList",
+                    "insertOrderedList",
+                    "indent",
+                    "outdent",
+                    "createLink",
+                    "unlink",
+                    "insertImage",
+                    "subscript",
+                    "superscript",
+                    "viewHtml"
+                ]
+            });
+        });
+    </script>
+}
+
